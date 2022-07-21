@@ -40,4 +40,14 @@ public class BankController {
     public ResponseEntity<Integer> deleteBankById(@PathVariable("id") Integer id) throws Exception {
         return ResponseEntity.ok(bankService.delete(id));
     }
+
+    @GetMapping("/annotation/{id}")
+    public ResponseEntity<BankResponse> findByIdAnnotation(@PathVariable("id") Integer id) {
+        return ResponseEntity.ok(bankService.findByIdAnnotation(id));
+    }
+
+    @GetMapping("/annotation/all")
+    public ResponseEntity<List<BankResponse>> findAllAnnotation() {
+        return ResponseEntity.ok(bankService.findAllAnnotation());
+    }
 }

@@ -55,4 +55,14 @@ public class BankServiceImpl implements BankService {
         bankRepo.delete(bank);
         return bank.getId();
     }
+
+    @Override
+    public BankResponse findByIdAnnotation(Integer id) {
+        return bankMapper.findBankByIdAnnotation(id);
+    }
+
+    @Override
+    public List<BankResponse> findAllAnnotation() {
+        return bankMapper.findAllBankAnnotation();
+    }
 }
